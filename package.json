@@ -1,8 +1,8 @@
 {
-  "name": "gitsearch",
+  "name": "livescore-cli",
   "version": "0.0.1",
-  "description": "A simple command-line tool for searching git repositories",
-  "author": "Glynn Phillips",
+  "description": "A simple command-line tool for fetching livescore data from http://livescore.com",
+  "author": "Nickolay Rusev",
   "engines": {
     "node": ">=0.10"
   },
@@ -15,6 +15,6 @@
     "request": "~2.36.0"
   },
   "bin": {
-    "gitsearch": "gitsearch.js"
+    "livescore-cli": "livescore-cli.js"
   }
 }
