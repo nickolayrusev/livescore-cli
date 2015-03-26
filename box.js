@@ -1,19 +1,40 @@
+#!/usr/bin/env node
+
 var blessed = require('blessed'),
+    program = require('commander'),
     cheerio = require("cheerio"),
     Q = require('q'),
     request = require('request'),
     chalk = require('chalk');
+
+program
+    .version('0.0.1')
+    .usage('[options]')
+    .option('-r, --refresh [seconds]', 'Refresh interval in seconds. Default is 30 seconds.  Should be > 30')
+    .parse(process.argv);
+
+if (program.args.length)
+    program.help();
 
 function parseResponseBody(body) {
     $ = cheerio.load(body);
     var reduced = $("body .content > div")
         .toArray()
         .map(function(a, index) {
-            var champ = $(a).find("div .left").text();
-            var game = $(a).find("div").text();
+            var champ = $(a).find("div .left").text(),
+                game = $(a).find("div").text(),
+                host = $(a).find(".ply.tright.name").text(),
+                visitor = $(a).find(".ply.name:not(.tright)").text(),
+                time = $(a).find(".min").text(),
+                score = $(a).find(".sco").text();
+            // console.log('host is', host, 'visitor is', visitor, "score", score);
             return {
                 game: game,
-                champ: champ
+                host: host,
+                visitor: visitor,
+                champ: champ,
+                time: time,
+                score: score
             }
         })
         .reduce(function(initial, current) {
@@ -24,13 +45,19 @@ function parseResponseBody(body) {
                 });
                 return initial;
             }
+            //console.log(current);
             if (current["game"]) {
                 var lastIndex = initial.length - 1;
-                if (lastIndex == -1)
-                    return initial;
+                if (lastIndex == -1) return initial;
                 var last = initial[lastIndex];
                 //console.log('last',last);
-                last["game"].push(current["game"])
+                last["game"].push({
+                    game: current["game"],
+                    host: current["host"],
+                    visitor: current["visitor"],
+                    time : current["time"],
+                    score : current["score"]
+                })
                 initial[lastIndex] = last;
             }
             return initial;
@@ -39,13 +66,13 @@ function parseResponseBody(body) {
 };
 
 function blessify(data) {
-    return "{bold}last{/bold} updated " + new Date() + "\n" +
+    return "{bold}Last{/bold} updated " + new Date() + "\n" +
         data.reduce(function(initial, current) {
             var joinGames = current.game.map(function(a) {
                 var game = a.trim().indexOf(' ');
-                var gameName = a.substring(game+1, game.length);
-                var time =  a.substring(0,game+1);
-                return chalk.red(time) + chalk.green(gameName);
+                var gameName = a.substring(game + 1, game.length);
+                var time = a.substring(0, game + 1);
+                return chalk.inverse(time) + chalk.green(gameName);
             }).join('\n');
             return initial + '\n' + '{bold}' + chalk.bgBlack(current.champ.trim()) + '{/bold}' + '\n' + joinGames
         }, '');
@@ -53,7 +80,12 @@ function blessify(data) {
 
 function hitLivescore() {
     var defer = Q.defer();
-    request.get("http://livescore.com",
+    request.get({
+            uri: "http://www.livescore.com",
+            headers: {
+                "Accept": "text/html",
+            }
+        },
         function(err, httpResponse, body) {
             defer.resolve(body);
         })
@@ -106,8 +138,8 @@ screen.append(box);
 screen.render();
 
 (function init() {
-  box.setContent('fetching scores...');
-  screen.render();
+    box.setContent('fetching scores...');
+    screen.render();
     hitLivescore()
         .then(function(body) {
             var result = parseResponseBody(body);
@@ -120,9 +152,7 @@ setInterval(function() {
     hitLivescore()
         .then(function(body) {
             var result = parseResponseBody(body);
-            // console.log('result is ', result);
             box.setContent(blessify(result));
         })
-        // box.setContent('{center}Some different ' + new Date() + ' {red-fg}content{/red-fg}.{/center}');
     screen.render();
-}, 20000);
+}, program.refresh ? program.refresh * 1000 : 30000);
