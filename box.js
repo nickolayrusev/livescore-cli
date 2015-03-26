@@ -18,7 +18,7 @@ if (program.args.length)
 
 function parseResponseBody(body) {
     $ = cheerio.load(body);
-    var reduced = $("body .content > div")
+        var reduced = $("body .content > div")
         .toArray()
         .map(function(a, index) {
             var champ = $(a).find("div .left").text(),
@@ -55,8 +55,8 @@ function parseResponseBody(body) {
                     game: current["game"],
                     host: current["host"],
                     visitor: current["visitor"],
-                    time : current["time"],
-                    score : current["score"]
+                    time: current["time"],
+                    score: current["score"]
                 })
                 initial[lastIndex] = last;
             }
@@ -69,10 +69,11 @@ function blessify(data) {
     return "{bold}Last{/bold} updated " + new Date() + "\n" +
         data.reduce(function(initial, current) {
             var joinGames = current.game.map(function(a) {
-                var game = a.trim().indexOf(' ');
-                var gameName = a.substring(game + 1, game.length);
-                var time = a.substring(0, game + 1);
-                return chalk.inverse(time) + chalk.green(gameName);
+                var time = a.time,
+                    host = a.host,
+                    visitor = a.visitor,
+                    score = a.score;
+                return chalk.inverse(time) + chalk.green(host) + chalk.yellow(score) + chalk.green(visitor);
             }).join('\n');
             return initial + '\n' + '{bold}' + chalk.bgBlack(current.champ.trim()) + '{/bold}' + '\n' + joinGames
         }, '');
