@@ -11,7 +11,6 @@ This is the initial draft of the app.
 
 ##Screenshots
 
-![basic usage](http://s8.postimg.org/vdtvar877/Screen_Shot_2015_03_30_at_4_55_33_PM.png)
 ##Installation
 npm install
 
