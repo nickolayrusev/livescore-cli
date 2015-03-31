@@ -92,4 +92,4 @@ setInterval(function() {
             box.setContent(helper.blessify(finalFlattenChamps));
             screen.render();
         })
-}, program.refresh ? program.refresh * 1000 : 10000);
+}, program.refresh ? program.refresh * 1000 : 30000);
