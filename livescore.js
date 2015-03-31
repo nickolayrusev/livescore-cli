@@ -27,7 +27,7 @@ var screen = blessed.screen({
 });
 
 
-screen.title = 'my window title';
+screen.title = 'livescore command line';
 // Create a box perfectly centered horizontally and vertically.
 var box = blessed.box({
     content: 'loading livescore ...',

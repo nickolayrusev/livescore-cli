@@ -21,11 +21,11 @@ node run box.js
 ###TODO
 
 - [ ] fix coloring
-- [ ] goal notification
+- [x] goal notification
 - [ ] upload more screens
-- [ ] add comments and http response samples
+- [x] add comments and http response samples
 - [ ] make node module
-- [ ] rename box.js file
+- [x] rename box.js file
 - [ ] more readable readme
 - [ ] describe running options
 - [ ] upload it to npm
