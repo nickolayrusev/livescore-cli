@@ -3,7 +3,8 @@
 var blessed = require('blessed'),
     program = require('commander'),
     _ = require('lodash'),
-    helper = require('./lib/livescore-helpers.js'); 
+    helper = require('./lib/livescore-helpers.js'),
+    fs = require('fs');
 
 
 //global variables
@@ -13,7 +14,7 @@ program
     .version('0.0.1')
     .usage('[options]')
     .option('-r, --refresh [seconds]', 'Refresh interval in seconds. Default is 30 seconds.  Should be > 30')
-    .option('-d, --debugging','debugging')
+    .option('-d, --debugging', 'debugging')
     .parse(process.argv);
 
 if (program.args.length)
@@ -70,6 +71,8 @@ screen.render();
     helper.hitLivescore()
         .then(function(body) {
             var result = helper.parseResponseBody(body);
+            if (program.debugging)
+                fs.appendFile('debug.log',"\n" +  JSON.stringify(result));
             _cached = _.clone(result, true);
             box.setContent(helper.blessify(result));
             screen.render();
@@ -90,4 +93,3 @@ setInterval(function() {
             screen.render();
         })
 }, program.refresh ? program.refresh * 1000 : 10000);
-
