@@ -10,7 +10,7 @@ This is the initial draft of the app.
 * automatic refresh
 
 ##Screenshots
-![basic](https://lh6.googleusercontent.com/ozQ75QsTOkpqmHy3BU879RlG0xR0hqmDGgjake7qmMU4FgMVos4fL_T6wEepRYL_Laqmjr73C5eg7lw=w2560-h1210)
+![basic](https://lh4.googleusercontent.com/VDUtV0c2ZIlZ6Sy0aqSGYelkm0aef1rr-Q-49VjmaaX44_t9mCp4TIbCXb-_8NQkt_yhQVYDWuAsZY4=w2560-h1210)
 ##Installation
 npm install
 
