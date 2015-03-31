@@ -1,0 +1,587 @@
+[
+  {
+    "champ": " EURO 2016 - Qualification:: group B ",
+    "games": [
+      {
+        "gameId": " Israel - Belgium ",
+        "game": " 21:45  Israel  ? - ?  Belgium ",
+        "host": " Israel ",
+        "visitor": " Belgium ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " England - League 1 ",
+    "games": [
+      {
+        "gameId": " Bradford City - Chesterfield ",
+        "game": " 21:45  Bradford City  ? - ?  Chesterfield ",
+        "host": " Bradford City ",
+        "visitor": " Chesterfield ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " England - Conference Premier ",
+    "games": [
+      {
+        "gameId": " Dartford - Gateshead FC ",
+        "game": " 21:45  Dartford  ? - ?  Gateshead FC ",
+        "host": " Dartford ",
+        "visitor": " Gateshead FC ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Wrexham - Dover ",
+        "game": " 21:45  Wrexham  ? - ?  Dover ",
+        "host": " Wrexham ",
+        "visitor": " Dover ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " England - Conference North ",
+    "games": [
+      {
+        "gameId": " Chorley - Guiseley ",
+        "game": " 21:45  Chorley  ? - ?  Guiseley ",
+        "host": " Chorley ",
+        "visitor": " Guiseley ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " England - Conference South ",
+    "games": [
+      {
+        "gameId": " Bath City - Hayes & Yeading United ",
+        "game": " 21:45  Bath City  ? - ?  Hayes & Yeading United ",
+        "host": " Bath City ",
+        "visitor": " Hayes & Yeading United ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Germany - Regionalliga Bayern ",
+    "games": [
+      {
+        "gameId": " SV Schalding-Heining - FC Memmingen ",
+        "game": " 18:45  SV Schalding-Heining  ? - ?  FC Memmingen ",
+        "host": " SV Schalding-Heining ",
+        "visitor": " FC Memmingen ",
+        "time": " 18:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Germany - Regionalliga Südwest ",
+    "games": [
+      {
+        "gameId": " Eintracht Trier - Nottingen ",
+        "game": " 20:00  Eintracht Trier  ? - ?  Nottingen ",
+        "host": " Eintracht Trier ",
+        "visitor": " Nottingen ",
+        "time": " 20:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Hessen Kassel - KSV Baunatal ",
+        "game": " 20:00  Hessen Kassel  ? - ?  KSV Baunatal ",
+        "host": " Hessen Kassel ",
+        "visitor": " KSV Baunatal ",
+        "time": " 20:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Kaiserslautern II - Koblenz ",
+        "game": " 20:00  Kaiserslautern II  ? - ?  Koblenz ",
+        "host": " Kaiserslautern II ",
+        "visitor": " Koblenz ",
+        "time": " 20:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Pirmasens - Elversberg ",
+        "game": " 20:00  Pirmasens  ? - ?  Elversberg ",
+        "host": " Pirmasens ",
+        "visitor": " Elversberg ",
+        "time": " 20:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " SpVgg Neckarelz - FCA Walldorf ",
+        "game": " 20:00  SpVgg Neckarelz  ? - ?  FCA Walldorf ",
+        "host": " SpVgg Neckarelz ",
+        "visitor": " FCA Walldorf ",
+        "time": " 20:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Wormatia Worms - Freiburg II ",
+        "game": " 20:00  Wormatia Worms  ? - ?  Freiburg II ",
+        "host": " Wormatia Worms ",
+        "visitor": " Freiburg II ",
+        "time": " 20:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Saarbruecken - Mannheim ",
+        "game": " 21:15  Saarbruecken  ? - ?  Mannheim ",
+        "host": " Saarbruecken ",
+        "visitor": " Mannheim ",
+        "time": " 21:15 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Scotland - Championship ",
+    "games": [
+      {
+        "gameId": " Falkirk - Cowdenbeath ",
+        "game": " 21:45  Falkirk  ? - ?  Cowdenbeath ",
+        "host": " Falkirk ",
+        "visitor": " Cowdenbeath ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Scotland - League 2 ",
+    "games": [
+      {
+        "gameId": " Elgin City - Berwick Rangers ",
+        "game": " 21:45  Elgin City  ? - ?  Berwick Rangers ",
+        "host": " Elgin City ",
+        "visitor": " Berwick Rangers ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " International - Friendly ",
+    "games": [
+      {
+        "gameId": " Japan - Uzbekistan ",
+        "game": " 25'  Japan  1 - 0  Uzbekistan ",
+        "host": " Japan ",
+        "visitor": " Uzbekistan ",
+        "time": " 25' ",
+        "score": " 1 - 0 "
+      },
+      {
+        "gameId": " South Korea - New Zealand ",
+        "game": " 14:00  South Korea  ? - ?  New Zealand ",
+        "host": " South Korea ",
+        "visitor": " New Zealand ",
+        "time": " 14:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " China - Tunisia ",
+        "game": " 14:35  China  ? - ?  Tunisia ",
+        "host": " China ",
+        "visitor": " Tunisia ",
+        "time": " 14:35 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Liechtenstein - San Marino ",
+        "game": " 16:00  Liechtenstein  ? - ?  San Marino ",
+        "host": " Liechtenstein ",
+        "visitor": " San Marino ",
+        "time": " 16:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Estonia - Iceland ",
+        "game": " 19:00  Estonia  ? - ?  Iceland ",
+        "host": " Estonia ",
+        "visitor": " Iceland ",
+        "time": " 19:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Switzerland - USA ",
+        "game": " 19:08  Switzerland  ? - ?  USA ",
+        "host": " Switzerland ",
+        "visitor": " USA ",
+        "time": " 19:08 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Russia - Kazakhstan ",
+        "game": " 20:00  Russia  ? - ?  Kazakhstan ",
+        "host": " Russia ",
+        "visitor": " Kazakhstan ",
+        "time": " 20:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Sweden - Iran ",
+        "game": " 20:30  Sweden  ? - ?  Iran ",
+        "host": " Sweden ",
+        "visitor": " Iran ",
+        "time": " 20:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Ukraine - Latvia ",
+        "game": " 21:00  Ukraine  ? - ?  Latvia ",
+        "host": " Ukraine ",
+        "visitor": " Latvia ",
+        "time": " 21:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Luxembourg - Turkey ",
+        "game": " 21:15  Luxembourg  ? - ?  Turkey ",
+        "host": " Luxembourg ",
+        "visitor": " Turkey ",
+        "time": " 21:15 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Austria - Bosnia-Herzegovina ",
+        "game": " 21:30  Austria  ? - ?  Bosnia-Herzegovina ",
+        "host": " Austria ",
+        "visitor": " Bosnia-Herzegovina ",
+        "time": " 21:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Slovakia - Czech Republic ",
+        "game": " 21:30  Slovakia  ? - ?  Czech Republic ",
+        "host": " Slovakia ",
+        "visitor": " Czech Republic ",
+        "time": " 21:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Italy - England ",
+        "game": " 21:45  Italy  ? - ?  England ",
+        "host": " Italy ",
+        "visitor": " England ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Netherlands - Spain ",
+        "game": " 21:45  Netherlands  ? - ?  Spain ",
+        "host": " Netherlands ",
+        "visitor": " Spain ",
+        "time": " 21:45 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Portugal - Cape Verde ",
+        "game": " 22:45  Portugal  ? - ?  Cape Verde ",
+        "host": " Portugal ",
+        "visitor": " Cape Verde ",
+        "time": " 22:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " ",
+    "games": [
+      {
+        "gameId": " Argentina - Ecuador ",
+        "game": " 02:30  Argentina  ? - ?  Ecuador ",
+        "host": " Argentina ",
+        "visitor": " Ecuador ",
+        "time": " 02:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Peru - Venezuela ",
+        "game": " 03:00  Peru  ? - ?  Venezuela ",
+        "host": " Peru ",
+        "visitor": " Venezuela ",
+        "time": " 03:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Mexico - Paraguay ",
+        "game": " 04:00  Mexico  ? - ?  Paraguay ",
+        "host": " Mexico ",
+        "visitor": " Paraguay ",
+        "time": " 04:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Panama - Costa Rica ",
+        "game": " 04:00  Panama  ? - ?  Costa Rica ",
+        "host": " Panama ",
+        "visitor": " Costa Rica ",
+        "time": " 04:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " El Salvador - Guatemala ",
+        "game": " 06:00  El Salvador  ? - ?  Guatemala ",
+        "host": " El Salvador ",
+        "visitor": " Guatemala ",
+        "time": " 06:00 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " International - Friendly (Under 21) ",
+    "games": [
+      {
+        "gameId": " Bosnia-Herzegovina U21 - Turkey U21 ",
+        "game": " 15:00  Bosnia-Herzegovina U21  ? - ?  Turkey U21 ",
+        "host": " Bosnia-Herzegovina U21 ",
+        "visitor": " Turkey U21 ",
+        "time": " 15:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Russia U21 - Sweden U21 ",
+        "game": " 17:00  Russia U21  ? - ?  Sweden U21 ",
+        "host": " Russia U21 ",
+        "visitor": " Sweden U21 ",
+        "time": " 17:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Czech Republic U21 - Portugal U21 ",
+        "game": " 19:00  Czech Republic U21  ? - ?  Portugal U21 ",
+        "host": " Czech Republic U21 ",
+        "visitor": " Portugal U21 ",
+        "time": " 19:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Romania U21 - Cyprus U21 ",
+        "game": " 19:30  Romania U21  ? - ?  Cyprus U21 ",
+        "host": " Romania U21 ",
+        "visitor": " Cyprus U21 ",
+        "time": " 19:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Norway U21 - Sweden U21 ",
+        "game": " 20:00  Norway U21  ? - ?  Sweden U21 ",
+        "host": " Norway U21 ",
+        "visitor": " Sweden U21 ",
+        "time": " 20:00 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Euro U-21 - Qualification group 5 ",
+    "games": [
+      {
+        "gameId": " Wales U21 - Bulgaria U21 ",
+        "game": " 21:00  Wales U21  ? - ?  Bulgaria U21 ",
+        "host": " Wales U21 ",
+        "visitor": " Bulgaria U21 ",
+        "time": " 21:00 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Hungary - Cup ",
+    "games": [
+      {
+        "gameId": " Aqvital FC Csakvar - Ferencvaros ",
+        "game": " 19:00  Aqvital FC Csakvar  ? - ?  Ferencvaros ",
+        "host": " Aqvital FC Csakvar ",
+        "visitor": " Ferencvaros ",
+        "time": " 19:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Szolnok - Kisvarda ",
+        "game": " 19:00  Szolnok  ? - ?  Kisvarda ",
+        "host": " Szolnok ",
+        "visitor": " Kisvarda ",
+        "time": " 19:00 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Montenegro - Telekom 1st CFL ",
+    "games": [
+      {
+        "gameId": " Berane - Mogren ",
+        "game": " 16:30  Berane  ? - ?  Mogren ",
+        "host": " Berane ",
+        "visitor": " Mogren ",
+        "time": " 16:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Buducnost Podgorica - Mornar ",
+        "game": " 16:30  Buducnost Podgorica  ? - ?  Mornar ",
+        "host": " Buducnost Podgorica ",
+        "visitor": " Mornar ",
+        "time": " 16:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " FK Lovcen - Grbalj Radanovici ",
+        "game": " 16:30  FK Lovcen  ? - ?  Grbalj Radanovici ",
+        "host": " FK Lovcen ",
+        "visitor": " Grbalj Radanovici ",
+        "time": " 16:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Mladost Podgorica - FK Bokelj ",
+        "game": " 16:30  Mladost Podgorica  ? - ?  FK Bokelj ",
+        "host": " Mladost Podgorica ",
+        "visitor": " FK Bokelj ",
+        "time": " 16:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Rudar Pljevlja - Zeta ",
+        "game": " 16:30  Rudar Pljevlja  ? - ?  Zeta ",
+        "host": " Rudar Pljevlja ",
+        "visitor": " Zeta ",
+        "time": " 16:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Sutjeska - Petrovac ",
+        "game": " 16:30  Sutjeska  ? - ?  Petrovac ",
+        "host": " Sutjeska ",
+        "visitor": " Petrovac ",
+        "time": " 16:30 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Brazil - Paulista A1 ",
+    "games": [
+      {
+        "gameId": " Portuguesa - Sao Bernardo ",
+        "game": " 01:30  Portuguesa  ? - ?  Sao Bernardo ",
+        "host": " Portuguesa ",
+        "visitor": " Sao Bernardo ",
+        "time": " 01:30 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Brazil - Cup ",
+    "games": [
+      {
+        "gameId": " Piaui - Salgueiro ",
+        "game": " 02:30  Piaui  ? - ?  Salgueiro ",
+        "host": " Piaui ",
+        "visitor": " Salgueiro ",
+        "time": " 02:30 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Bolivia - Primera Division:: clausura ",
+    "games": [
+      {
+        "gameId": " Club Petrolero - San Jose ",
+        "game": " 22:00  Club Petrolero  ? - ?  San Jose ",
+        "host": " Club Petrolero ",
+        "visitor": " San Jose ",
+        "time": " 22:00 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Colombia - Primera A:: apertura ",
+    "games": [
+      {
+        "gameId": " Santa Fe - Tolima ",
+        "game": " 03:45  Santa Fe  ? - ?  Tolima ",
+        "host": " Santa Fe ",
+        "visitor": " Tolima ",
+        "time": " 03:45 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Peru - Copa Inca:: group C ",
+    "games": [
+      {
+        "gameId": " Sport Huancayo - Ayacucho FC ",
+        "game": " 21:00  Sport Huancayo  ? - ?  Ayacucho FC ",
+        "host": " Sport Huancayo ",
+        "visitor": " Ayacucho FC ",
+        "time": " 21:00 ",
+        "score": " ? - ? "
+      }
+    ]
+  },
+  {
+    "champ": " Egypt - Premier League ",
+    "games": [
+      {
+        "gameId": " El Hodood - Al Nasr ",
+        "game": " 15:00  El Hodood  ? - ?  Al Nasr ",
+        "host": " El Hodood ",
+        "visitor": " Al Nasr ",
+        "time": " 15:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Petrojet - Ismaily SC ",
+        "game": " 15:00  Petrojet  ? - ?  Ismaily SC ",
+        "host": " Petrojet ",
+        "visitor": " Ismaily SC ",
+        "time": " 15:00 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " El Gounah - Al Asyoty Sport ",
+        "game": " 16:30  El Gounah  ? - ?  Al Asyoty Sport ",
+        "host": " El Gounah ",
+        "visitor": " Al Asyoty Sport ",
+        "time": " 16:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Misr El-Maqasha - Alaab Damanhour ",
+        "game": " 16:30  Misr El-Maqasha  ? - ?  Alaab Damanhour ",
+        "host": " Misr El-Maqasha ",
+        "visitor": " Alaab Damanhour ",
+        "time": " 16:30 ",
+        "score": " ? - ? "
+      },
+      {
+        "gameId": " Al Ahly - El Raja Marsa Matruh ",
+        "game": " 17:30  Al Ahly  ? - ?  El Raja Marsa Matruh ",
+        "host": " Al Ahly ",
+        "visitor": " El Raja Marsa Matruh ",
+        "time": " 17:30 ",
+        "score": " ? - ? "
+      }
+    ]
+  }
+]

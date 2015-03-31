@@ -6,7 +6,8 @@ var blessed = require('blessed'),
     Q = require('q'),
     request = require('request'),
     chalk = require('chalk'),
-    _ = require('lodash');
+    _ = require('lodash')
+    fs = require('fs');
 
 var exports = module.exports = {};
 
@@ -18,6 +19,7 @@ program
     .version('0.0.1')
     .usage('[options]')
     .option('-r, --refresh [seconds]', 'Refresh interval in seconds. Default is 30 seconds.  Should be > 30')
+    .option('-d, --debugging','debugging')
     .parse(process.argv);
 
 if (program.args.length)
@@ -47,7 +49,7 @@ function parseResponseBody(body) {
             if (current["champ"]) {
                 initial.push({
                     champ: current["champ"],
-                    game: []
+                    games: []
                 });
                 return initial;
             }
@@ -57,8 +59,8 @@ function parseResponseBody(body) {
                 if (lastIndex == -1) return initial;
                 var last = initial[lastIndex];
                 //console.log('last',last);
-                last["game"].push({
-                    gameId : current["host"] + '-' + current["visitor"],
+                last["games"].push({
+                    gameId: current["host"] + '-' + current["visitor"],
                     game: current["game"],
                     host: current["host"],
                     visitor: current["visitor"],
@@ -69,6 +71,8 @@ function parseResponseBody(body) {
             }
             return initial;
         }, []);
+    if(program.debugging)
+        fs.appendFile('debug.log', JSON.stringify(reduced));
     return reduced;
 };
 //flat all games into one array
@@ -83,7 +87,7 @@ function flatGames(result) {
 compare cached and incoming games if they have change in the score .
  returns flat array of games with new field - hasGoal
 */
-function checkForGoals(cachedGames,incomingGames) {
+function checkForGoals(cachedGames, incomingGames) {
     return incomingGames.map(function(a) {
         var currentInd = cachedGames.map(function(c) {
             return c.gameId;
@@ -97,18 +101,20 @@ function checkForGoals(cachedGames,incomingGames) {
         if (currentInd != -1) {
             if (a.score != existingObject.score) {
                 obj.hasGoal = true;
-            } 
+            }
         }
         return obj;
     });
 };
 //convert back to original structure
-function joinGames(champ,games){
-     var g =  champ.map(function(ch){
-        var chGames = ch.game;
-        games.map(function(n){
-            var ind = chGames.map(function(g) { return g.gameId}).indexOf(n.gameId);
-            if(ind!=-1){
+function joinGames(champ, games) {
+    var g = champ.map(function(ch) {
+        var chGames = ch.games;
+        games.map(function(n) {
+            var ind = chGames.map(function(g) {
+                return g.gameId
+            }).indexOf(n.gameId);
+            if (ind != -1) {
                 chGames[ind] = n;
                 return n;
             }
@@ -117,17 +123,18 @@ function joinGames(champ,games){
     });
     return g;
 };
+
 function blessify(data) {
     return "{bold}Last{/bold} updated " + new Date() + "\n" +
         data.reduce(function(initial, current) {
-            var joinGames = current.game.map(function(a) {
+            var joinGames = current.games.map(function(a) {
                 var time = a.time,
                     host = a.host,
                     visitor = a.visitor,
                     score = a.score;
-                    hasGoal = a.hasGoal;
-                    var goal = hasGoal ? chalk.bold.yellow.bgBlue('GOAL') : '';
-                    var coloredTime = (time.indexOf("\'") != -1) ? chalk.cyan.inverse(time) : chalk.inverse(time);
+                hasGoal = a.hasGoal;
+                var goal = hasGoal ? chalk.bold.yellow.bgBlue('GOAL') : '';
+                var coloredTime = (time.indexOf("\'") != -1) ? chalk.cyan.inverse(time) : chalk.inverse(time);
 
                 return coloredTime + chalk.green(host) + chalk.yellow(score) + chalk.green(visitor) + goal;
             }).join('\n');
@@ -142,8 +149,8 @@ function hitLivescore() {
             // uri:"http://localhost/livescore",
             headers: {
                 "Accept": "text/html",
-                "Accept-Language":"en-US,en",
-                "Cookie":"tz="+ new Date().getTimezoneOffset() / -60
+                "Accept-Language": "en-US,en",
+                "Cookie": "tz=" + new Date().getTimezoneOffset() / -60
             }
         },
         function(err, httpResponse, body) {
@@ -203,7 +210,7 @@ screen.render();
     hitLivescore()
         .then(function(body) {
             var result = parseResponseBody(body);
-            _cached = _.clone(result,true);
+            _cached = _.clone(result, true);
             _time = new Date()
             box.setContent(blessify(result));
             screen.render();
@@ -218,14 +225,14 @@ setInterval(function() {
             var incomingFlattenGames = flatGames(result);
             var cachedFlattenGames = flatGames(_cached);
 
-            var resultWithGoals = checkForGoals(cachedFlattenGames,incomingFlattenGames);
-            _cached = _.clone(result,true);
-            var finalFlattenChamps = joinGames(result,resultWithGoals);
+            var resultWithGoals = checkForGoals(cachedFlattenGames, incomingFlattenGames);
+            _cached = _.clone(result, true);
+            var finalFlattenChamps = joinGames(result, resultWithGoals);
             box.setContent(blessify(finalFlattenChamps));
             screen.render();
         })
 }, program.refresh ? program.refresh * 1000 : 30000);
 
 module.exports = {
-    hitLivescore : hitLivescore
+    hitLivescore: hitLivescore
 }
