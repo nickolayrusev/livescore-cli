@@ -10,7 +10,6 @@ This is the initial draft of the app.
 * automatic refresh
 
 ##Screenshots
-![basic](https://lh4.googleusercontent.com/VDUtV0c2ZIlZ6Sy0aqSGYelkm0aef1rr-Q-49VjmaaX44_t9mCp4TIbCXb-_8NQkt_yhQVYDWuAsZY4=w2560-h1210)
 
 <img src="https://lh4.googleusercontent.com/VDUtV0c2ZIlZ6Sy0aqSGYelkm0aef1rr-Q-49VjmaaX44_t9mCp4TIbCXb-_8NQkt_yhQVYDWuAsZY4=w2560-h1210" alt="basic usage" width="500px">
 ##Installation
