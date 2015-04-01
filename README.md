@@ -14,10 +14,10 @@ This is the initial draft of the app.
 <img src="https://lh6.googleusercontent.com/ZlO1j64UzkXFSiuVYoL6572RO5Ky79CtLfC9plxMDsERIAkCn9TLUDYoWwAMyKlW05lYVD7gpd0Vivw=w2560-h1210" alt="basic usage" width="500px">
 
 ##Installation
-npm install
+npm install -g livescore
 
 ##Usage
-node run box.js
+livescore
 
 ###TODO
 
