@@ -1,6 +1,6 @@
 {
   "name": "livescore",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A simple command-line tool for fetching livescore data from http://livescore.com",
   "author": "Nickolay Rusev <nickolay.rusev@gmail.com>",
   "files": [
@@ -25,6 +25,7 @@
     "commander": "^2.2.0",
     "fs": "0.0.2",
     "lodash": "^3.6.0",
+    "path": "^0.11.14",
     "q": "^1.2.0",
     "request": "~2.36.0"
   }
