@@ -1,11 +1,12 @@
 {
   "name": "livescore",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "A simple command-line tool for fetching livescore data from http://livescore.com",
   "author": "Nickolay Rusev <nickolay.rusev@gmail.com>",
   "files": [
     "livescore.js",
-    "lib"
+    "lib",
+    "bin"
   ],
   "bin": {
     "livescore": "./bin/livescore"

@@ -11,7 +11,7 @@ This is the initial draft of the app.
 
 ##Screenshots
 
-<img src="https://lh6.googleusercontent.com/ZlO1j64UzkXFSiuVYoL6572RO5Ky79CtLfC9plxMDsERIAkCn9TLUDYoWwAMyKlW05lYVD7gpd0Vivw=w2560-h1210" alt="basic usage" width="500px">
+<img src="http://googledrive.com/host/0Bzjo3jPfqfw4fmItWjB3dEVfekxHRVV2emRLdDVuSm5lMUtuLTluMERYS0xydll4LTFEYWs/Screen+Shot+last.png" alt="basic usage" width="500px">
 
 ##Installation
 npm install -g livescore

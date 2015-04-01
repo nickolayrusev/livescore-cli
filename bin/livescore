@@ -6,5 +6,4 @@ var path = require('path');
 var fs = require('fs');
 var lib = path.dirname(fs.realpathSync(__dirname));
 
-console.log('lbi',lib)
 require(lib+'/livescore.js')
