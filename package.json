@@ -1,10 +1,15 @@
 {
   "name": "livescore",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple command-line tool for fetching livescore data from http://livescore.com",
   "author": "Nickolay Rusev <nickolay.rusev@gmail.com>",
   "engines": {
     "node": ">=0.10"
+  },
+  "main":"livescore.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nickolayrusev/livescore-cli.git"
   },
   "dependencies": {
     "blessed": "0.0.51",
@@ -15,8 +20,5 @@
     "lodash": "^3.6.0",
     "q": "^1.2.0",
     "request": "~2.36.0"
-  },
-  "bin": {
-    "livescore-cli": "livescore.js"
   }
 }
