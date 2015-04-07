@@ -3,30 +3,30 @@ Livescore command line api
 
 Fetches results from http://livescore.com and updates the results every 30 seconds.
 This is the initial draft of the app.
-###Features
+### Features
 * vi key bindings
 * goal notifications
 * refresh interval defined by user
 * automatic refresh
 
-##Screenshots
+## Screenshots
 
 <img src="http://googledrive.com/host/0Bzjo3jPfqfw4fmItWjB3dEVfekxHRVV2emRLdDVuSm5lMUtuLTluMERYS0xydll4LTFEYWs/Screen+Shot+last.png" alt="basic usage" width="500px">
 
-##Installation
+## Installation
 npm install -g livescore
 
-##Usage
+## Usage
 livescore
 
-###TODO
+### TODO
 
-- [ ] fix coloring
+- [x] fix coloring
 - [x] goal notification
 - [ ] upload more screens
 - [x] add comments and http response samples
-- [ ] make node module
+- [x] make node module
 - [x] rename box.js file
 - [ ] more readable readme
 - [ ] describe running options
-- [ ] upload it to npm
+- [x] upload it to npm
