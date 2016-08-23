@@ -22,7 +22,8 @@ var response = "Query-Expiry::: 2016-08-19 14:57:20[:crlt\"TPO1\"ilols\"SD1\"ilu
     //box.setContent('fetching scores...');
     helper.hitLivescore()
         .then(function(body) {
-            var result = helper.parseResponseBody(body);
-        }, function(error){console.log(error);});
-        console.log(crypto.decrypt(response));
+            var result = helper.parseResponseBody(crypto.decrypt(body));
+            console.log(result);
+        }, function(error) { console.log(error); });
+    // console.log(crypto.decrypt(response));
 })()
