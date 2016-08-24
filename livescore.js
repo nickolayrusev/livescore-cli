@@ -4,7 +4,9 @@ var blessed = require('blessed'),
     program = require('commander'),
     _ = require('lodash'),
     helper = require('./lib/livescore-helpers.js'),
-    fs = require('fs');
+    fs = require('fs'),
+    crypto = require('./lib/crypt-util');
+
 
 
 //global variables
@@ -70,7 +72,7 @@ screen.render();
     screen.render();
     helper.hitLivescore()
         .then(function(body) {
-            var result = helper.parseResponseBody(body);
+            var result = helper.parseResponseBody(crypto.decrypt(body));
             if (program.debugging)
                 fs.appendFile('debug.log',"\n" +  JSON.stringify(result));
             _cached = _.clone(result, true);
@@ -82,7 +84,7 @@ screen.render();
 setInterval(function() {
     helper.hitLivescore()
         .then(function(body) {
-            var result = helper.parseResponseBody(body);
+            var result = helper.parseResponseBody(crypto.decrypt(body));
             var incomingFlattenGames = helper.flatGames(result);
             var cachedFlattenGames = helper.flatGames(_cached);
             var resultWithGoals = helper.checkForGoals(cachedFlattenGames, incomingFlattenGames);
