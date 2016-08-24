@@ -30,3 +30,7 @@ livescore
 - [ ] more readable readme
 - [ ] describe running options
 - [x] upload it to npm
+- [ ] refactor livescore.js - separate business logic 
+- [ ] multi language
+- [ ] unit tests
+- [ ] use babel
