@@ -4,14 +4,13 @@
   "description": "A simple command-line tool for fetching livescore data from http://livescore.com",
   "author": "Nickolay Rusev <nickolay.rusev@gmail.com>",
   "files": [
-    "livescore.js",
-    "lib",
+    "src/lib",
     "bin"
   ],
   "bin": {
     "livescore": "./bin/livescore"
   },
-  "preferGlobal": "true",
+  "preferGlobal": true,
   "engines": {
     "node": ">=0.10"
   },
@@ -22,11 +21,9 @@
   "dependencies": {
     "blessed": "0.0.51",
     "chalk": "^0.4.0",
-    "commander": "^2.2.0",
-    "lodash": "^3.6.0",
-    "path": "^0.11.14",
-    "q": "^1.2.0",
-    "request": "~2.36.0"
+    "clear": "^0.1.0",
+    "commander": "^6.0.0",
+    "node-fetch": "^2.6.0"
   },
   "keywords": [
     "livescore",
@@ -34,5 +31,29 @@
     "command-line",
     "api"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/blessed": "^0.1.17",
+    "@types/chalk": "^2.2.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "^14.0.27",
+    "@types/node-fetch": "^2.5.7",
+    "babel-jest": "^26.3.0",
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "local": "sudo npm i -g && livescore",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
+    "test": "jest"
+  }
 }
