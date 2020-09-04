@@ -26,7 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = __importDefault(require("commander"));
 const blessed_1 = __importDefault(require("blessed"));
 const livescore_1 = __importDefault(require("./lib/livescore"));
-const helper = __importStar(require("./lib/livescore-helpers"));
+const helper = __importStar(require("./lib/color-helpers"));
 const program = commander_1.default.program;
 program
     .version('0.0.1')

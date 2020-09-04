@@ -3,7 +3,7 @@
 import commander from 'commander';
 import blessed from 'blessed'
 import livescore from "./lib/livescore";
-import * as helper from './lib/livescore-helpers'
+import * as helper from './lib/color-helpers'
 
 const program = commander.program
 

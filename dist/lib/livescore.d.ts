@@ -15,6 +15,7 @@ declare class LivescoreApi {
     constructor();
     hit(): Promise<IChampMap | {}>;
     diff(body: IChampMap): IChampMap;
+    reset(): void;
     private store;
     private static livescore;
 }

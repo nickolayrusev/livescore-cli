@@ -2,8 +2,8 @@
 
 "use strict";
 
-var path = require('path');
-var fs = require('fs');
-var lib = path.dirname(fs.realpathSync(__dirname));
+var path = require('path')
+var fs = require('fs')
+var lib = path.dirname(fs.realpathSync(__dirname))
 
-require(lib+'/livescore.js')
+require(lib+'/dist/livescore.js')

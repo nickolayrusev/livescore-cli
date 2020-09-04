@@ -1,5 +1,4 @@
 import fetch from 'node-fetch';
-import crypto from './crypt-util';
 
 interface IGame {
   gameId: string
@@ -13,38 +12,35 @@ interface IGame {
 
 export type IChampMap = { [index: string]: IGame[] }
 
-const parseResponseBody = (body: string): IChampMap => {
-  var result = JSON.parse(body),
-    stages = result["Stages"];
+const isEmpty = o => !Object.keys(o).length
+
+const goal = (a: IGame, b: IGame) => a.score === '? - ?' && b.score === '0 - 0' ? false : a.score !== b.score
+
+const zip = (a, b): any[] => a.map((x, i) => [x, b[i]])
+
+const parseResponseBody = (body: any): IChampMap => {
+  const stages = body["Stages"]
 
   return stages.map(function (stage) {
-    var champ = stage["Cnm"] + " " + stage["Snm"],
-      events = stage["Events"];
+    const champ = `${stage["Cnm"]} ${stage["Snm"]}`,
+        events = stage["Events"]
 
-    var transformedEvents: IGame[] = events.map(function (e) {
-      var hostObj = e["T1"],
-        visitorObj = e["T2"];
+    const games: IGame[] = events.map(e => {
+      const hostObj = e["T1"],
+          visitorObj = e["T2"]
 
-      var host = ' ' + hostObj[0].Nm + ' ',
-        visitor = ' ' + visitorObj[0].Nm,
-        gameId = host + ' - ' + visitor,
-        score = (e["Tr1"] || '?') + ' - ' + (e["Tr2"] || '?'),
-        time = e["Eps"];
+      const host = `${hostObj[0].Nm}`,
+          visitor = `${visitorObj[0].Nm}`,
+          gameId = `${host} - ${visitor}`,
+          score = `${e["Tr1"] || '?'} - ${e["Tr2"] || '?'}`,
+          time = e["Eps"] == 'NS' ? e["Esd"].toString().substring(8, 10) + ':' + e["Esd"].toString().substring(10, 12) : e["Eps"]
 
-      time = time == 'NS' ? e["Esd"].toString().substring(8, 10) + ':' + e["Esd"].toString().substring(10, 12) : time;
-      return {"gameId": gameId, "host": host, "visitor": visitor, "score": score, "time": time};
+      return {"gameId": gameId, "host": host, "visitor": visitor, "score": score, "time": time}
     });
-    return {champ: champ, games: transformedEvents};
+    return {champ, games}
   }).reduce((i, c) => ({...i, [c.champ]: c.games}), {})
 }
 
-const isEmpty = (o) => !Object.keys(o).length
-
-const goal = (a: IGame, b: IGame) => {
-  return a.score === ' ? - ? ' && b.score === ' 0 - 0 ' ?  false : a.score != b.score
-}
-
-const zip = (a, b): any[] => a.map((x, i) => [x, b[i]])
 
 const diff = (source: IChampMap, target: IChampMap): IChampMap => {
   if (isEmpty(source)) {
@@ -53,8 +49,7 @@ const diff = (source: IChampMap, target: IChampMap): IChampMap => {
   return Object.keys(target).reduce((i: any, c) => {
     const prev = source[c],
       current = target[c]
-    const games = zip(prev, current).map(([a, b]) => ({...b, hasGoal: goal(a, b)}))
-    return {...i, [c]: games}
+    return {...i, [c]: zip(prev, current).map(([a, b]) => ({...b, hasGoal: goal(a, b)}))}
   }, {});
 }
 
@@ -62,12 +57,12 @@ class LivescoreApi {
   private old: IChampMap;
 
   constructor() {
-    this.old = {};
+    this.old = {}
   }
 
   public hit() {
     return LivescoreApi.livescore()
-      .then(text => parseResponseBody(crypto.decrypt(text)))
+      .then(text => parseResponseBody(text))
       .catch(e => {
         return {}
       })
@@ -78,22 +73,26 @@ class LivescoreApi {
     return this.store(diff(this.old, body))
   }
 
+  public reset(){
+    this.old = {}
+  }
+
   private store(data: IChampMap): IChampMap {
     return this.old = {...data}
   }
 
   private static livescore() {
-    const tz = new Date().getTimezoneOffset() / 60 * -1
-    return fetch(`http://m.livescore.com/~~/app1-home/soccer/?tz=${tz}&tzout=${tz}`,
+    const date = new Date()
+    const formattedDate = `${date.getFullYear()}${date.getMonth()+1}${date.getDate()}`
+    return fetch(`https://prod-public-api.livescore.com/v1/api/react/date/soccer/${formattedDate}/2.00`,
       {
         headers: {
           "Accept": "text/plain",
           "Accept-Language": "en-US,en",
           "Content-Type": "application/text; charset=utf-8",
-          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36"
         }
       })
-      .then(res => res.text())
+      .then(res => res.json())
   }
 }
 
